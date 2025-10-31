@@ -1,48 +1,89 @@
 export default function Skills() {
   const skills = [
-    { name: "Python", level: 90, color: "from-cyan-500 to-blue-600" },
-    { name: "HTML & CSS", level: 85, color: "from-blue-500 to-purple-600" },
-    { name: "Problem Solving", level: 88, color: "from-purple-500 to-pink-600" },
-    { name: "Teamwork", level: 92, color: "from-pink-500 to-orange-600" },
+    { name: "Python", level: 90, category: "Core Language", icon: "🐍" },
+    { name: "Machine Learning", level: 88, category: "Specialization", icon: "🤖" },
+    { name: "Deep Learning", level: 85, category: "Advanced", icon: "🧠" },
+    { name: "Data Analysis", level: 87, category: "Analytics", icon: "📊" },
+    { name: "Problem Solving", level: 92, category: "Core Skill", icon: "🎯" },
+    { name: "Teamwork", level: 94, category: "Collaboration", icon: "👥" },
   ]
 
   return (
     <section className="relative py-20 px-4 md:px-8 max-w-6xl mx-auto">
       <div className="space-y-12">
-        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="glow-text">Skills & Expertise</span>
+          <div className="text-sm font-mono text-cyan-400 tracking-widest mb-4 flex items-center justify-center gap-3">
+            <span className="text-green-400">// </span>TECHNICAL ARSENAL
+          </div>
+          <h2
+            className="text-6xl md:text-7xl font-black mb-4 text-transparent bg-clip-text"
+            style={{
+              backgroundImage: "linear-gradient(to right, #00d9ff, #00ff88, #00d9ff)",
+            }}
+          >
+            SKILLS
           </h2>
-          <p className="text-slate-400 text-lg">Technical abilities and core competencies</p>
+          <p className="text-green-400 text-lg font-mono">$ cat expertise.txt</p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {skills.map((skill) => (
-            <div key={skill.name} className="space-y-3">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-slate-100">{skill.name}</h3>
-                <span className="text-cyan-400 font-bold">{skill.level}%</span>
-              </div>
-              <div className="h-3 bg-slate-800 rounded-full overflow-hidden glow-box">
-                <div
-                  className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
-                  style={{ width: `${skill.level}%` }}
-                ></div>
+            <div
+              key={skill.name}
+              className="relative border border-green-500/30 bg-slate-950/40 backdrop-blur-md rounded-lg p-6 group hover:scale-105 transition-transform duration-300 overflow-hidden"
+              style={{
+                boxShadow: "0 0 20px rgba(0, 255, 136, 0.15), inset 0 0 20px rgba(0, 255, 136, 0.05)",
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none rounded-lg"></div>
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="text-3xl mb-2">{skill.icon}</div>
+                    <h3 className="text-2xl font-black text-green-400">{skill.name}</h3>
+                    <p className="text-xs text-cyan-400 font-mono mt-1">{skill.category}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-black text-green-400">{skill.level}%</div>
+                    <div className="text-xs text-green-400/60 font-mono">PROFICIENCY</div>
+                  </div>
+                </div>
+
+                {/* Tech bar */}
+                <div className="h-2 bg-slate-800 rounded-full overflow-hidden mt-4 relative">
+                  <div
+                    className="h-full bg-gradient-to-r from-green-500 via-cyan-400 to-green-500 transition-all duration-1000 ease-out"
+                    style={{ width: `${skill.level}%` }}
+                  ></div>
+                  <div className="absolute inset-0 animate-scan opacity-30"></div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Passion Section */}
-        <div className="mt-16 glow-box p-8 rounded-lg text-center">
-          <h3 className="text-2xl font-bold text-cyan-400 mb-4">My Focus</h3>
-          <p className="text-slate-300 leading-relaxed">
-            I'm passionate about applying AI and ML in real-world scenarios. My journey involves continuous learning,
-            innovation, and collaboration with teammates to solve complex problems. I believe in combining technical
-            expertise with strong teamwork to create impactful solutions.
-          </p>
+        <div className="relative border-2 border-green-500/50 bg-slate-950/40 backdrop-blur-md rounded-lg p-8 text-center mt-12 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none rounded-lg"></div>
+          <div className="relative z-10">
+            <div className="font-mono text-green-400 mb-4 text-sm">
+              <span className="text-cyan-400">{">"} </span>./compile_expertise.sh
+            </div>
+            <h3 className="text-3xl font-black text-green-400 mb-4">TECHNICAL FOCUS</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+              <div className="border-l-2 border-green-500 pl-4">
+                <p className="text-green-400 font-mono text-sm font-bold">AI/ML Systems</p>
+                <p className="text-cyan-400 text-xs mt-1">Building intelligent algorithms</p>
+              </div>
+              <div className="border-l-2 border-cyan-500 pl-4">
+                <p className="text-cyan-400 font-mono text-sm font-bold">Data Processing</p>
+                <p className="text-green-400 text-xs mt-1">Efficient data manipulation</p>
+              </div>
+              <div className="border-l-2 border-green-500 pl-4">
+                <p className="text-green-400 font-mono text-sm font-bold">Innovation</p>
+                <p className="text-cyan-400 text-xs mt-1">Cutting-edge solutions</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

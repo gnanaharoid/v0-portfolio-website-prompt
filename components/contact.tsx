@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 
 export default function Contact() {
@@ -51,107 +50,152 @@ export default function Contact() {
   return (
     <section className="relative py-20 px-4 md:px-8 max-w-6xl mx-auto">
       <div className="space-y-12">
-        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="glow-text">Get in Touch</span>
+          <div className="text-sm font-mono text-cyan-400 tracking-widest mb-4 flex items-center justify-center gap-3">
+            <span className="text-green-400">// </span>CONNECTION PROTOCOL
+          </div>
+          <h2
+            className="text-6xl md:text-7xl font-black mb-4 text-transparent bg-clip-text"
+            style={{
+              backgroundImage: "linear-gradient(to right, #00d9ff, #00ff88, #00d9ff)",
+            }}
+          >
+            GET IN TOUCH
           </h2>
-          <p className="text-slate-400 text-lg">Let's connect and create something amazing</p>
+          <p className="text-green-400 text-lg font-mono">$ connect --secure</p>
         </div>
 
         {/* Contact Grid */}
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glow-box p-6 rounded-lg hover:scale-105 transition-transform duration-300">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-3">Email</h3>
-              <a
-                href="mailto:harishgnana2021@gmail.com"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 text-lg"
-              >
-                harishgnana2021@gmail.com
-              </a>
+          <div className="space-y-6">
+            <div className="relative border border-green-500/30 bg-slate-950/40 backdrop-blur-md rounded-lg p-6 overflow-hidden hover:scale-105 transition-transform duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-sm font-mono text-green-400 mb-3">$ echo $EMAIL</div>
+                <h3 className="text-xl font-black text-green-400 mb-3">Email</h3>
+                <a
+                  href="mailto:harishgnana2021@gmail.com"
+                  className="text-cyan-400 hover:text-green-400 transition-colors duration-300 text-lg font-mono"
+                >
+                  harishgnana2021@gmail.com
+                </a>
+              </div>
             </div>
 
-            <div className="glow-box p-6 rounded-lg hover:scale-105 transition-transform duration-300">
-              <h3 className="text-2xl font-bold text-purple-400 mb-3">GitHub</h3>
-              <a
-                href="https://github.com/gnanaharoid"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-300 hover:text-purple-400 transition-colors duration-300 text-lg"
-              >
-                github.com/gnanaharoid
-              </a>
+            <div className="relative border border-green-500/30 bg-slate-950/40 backdrop-blur-md rounded-lg p-6 overflow-hidden hover:scale-105 transition-transform duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-sm font-mono text-cyan-400 mb-3">$ git clone</div>
+                <h3 className="text-xl font-black text-cyan-400 mb-3">GitHub</h3>
+                <a
+                  href="https://github.com/gnanaharoid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400 hover:text-cyan-400 transition-colors duration-300 text-lg font-mono"
+                >
+                  github.com/gnanaharoid
+                </a>
+              </div>
             </div>
 
-            <div className="glow-box p-6 rounded-lg">
-              <h3 className="text-2xl font-bold text-orange-400 mb-3">Location</h3>
-              <p className="text-slate-300">VIT Chennai, India</p>
+            <div className="relative border border-green-500/30 bg-slate-950/40 backdrop-blur-md rounded-lg p-6 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-sm font-mono text-green-400 mb-3">$ location</div>
+                <h3 className="text-xl font-black text-green-400 mb-3">Location</h3>
+                <p className="text-cyan-400 font-mono">VIT Chennai, India</p>
+              </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="glow-box p-8 rounded-lg space-y-6">
-            <div>
-              <label className="block text-slate-300 font-semibold mb-2">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded bg-slate-800/50 border border-cyan-500/30 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:glow-pulse transition-all duration-300"
-                placeholder="Your name"
-              />
+          <form
+            onSubmit={handleSubmit}
+            className="relative border border-green-500/30 bg-slate-950/40 backdrop-blur-md rounded-lg p-8 space-y-6 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none"></div>
+            <div className="relative z-10">
+              <div className="text-sm font-mono text-cyan-400 mb-4">$ send_message.sh</div>
+
+              <div>
+                <label className="block text-green-400 font-black mb-3 text-sm uppercase tracking-wider">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded bg-slate-800/70 border-2 border-green-500/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-green-400 focus:shadow-lg focus:shadow-green-500/20 transition-all duration-300 font-mono"
+                  placeholder="your_name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-cyan-400 font-black mb-3 text-sm uppercase tracking-wider">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded bg-slate-800/70 border-2 border-green-500/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-green-400 focus:shadow-lg focus:shadow-green-500/20 transition-all duration-300 font-mono"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-green-400 font-black mb-3 text-sm uppercase tracking-wider">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 rounded bg-slate-800/70 border-2 border-green-500/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-green-400 focus:shadow-lg focus:shadow-green-500/20 transition-all duration-300 resize-none font-mono"
+                  placeholder="your_message_here..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 rounded-lg font-bold transition-all duration-300 uppercase tracking-wider text-slate-950 justify-center flex items-center"
+                style={{
+                  background: loading
+                    ? "#00cc77"
+                    : submitted
+                      ? "#00ff88"
+                      : "linear-gradient(to right, #00ff88, #00d9ff)",
+                  boxShadow: "0 0 20px rgba(0, 255, 136, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1)",
+                }}
+              >
+                {loading ? "[ SENDING... ]" : submitted ? "✓ SENT!" : "[ SEND MESSAGE ]"}
+              </button>
+
+              {error && <p className="text-center text-red-400 text-sm mt-2 font-mono">{error}</p>}
+
+              {submitted && (
+                <p className="text-center text-green-400 text-sm font-mono animate-data-pulse">
+                  &gt; Message received! Connecting...
+                </p>
+              )}
             </div>
-
-            <div>
-              <label className="block text-slate-300 font-semibold mb-2">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded bg-slate-800/50 border border-cyan-500/30 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:glow-pulse transition-all duration-300"
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label className="block text-slate-300 font-semibold mb-2">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-3 rounded bg-slate-800/50 border border-cyan-500/30 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:glow-pulse transition-all duration-300 resize-none"
-                placeholder="Your message..."
-              ></textarea>
-            </div>
-
-            <button type="submit" className="w-full glow-button justify-center">
-              {loading ? "Sending..." : submitted ? "✓ Message Sent!" : "Send Message"}
-            </button>
-
-            {error && <p className="text-center text-red-400 text-sm mt-2">{error}</p>}
-
-            {submitted && (
-              <p className="text-center text-cyan-400 text-sm">Thanks for reaching out! I'll get back to you soon.</p>
-            )}
           </form>
         </div>
 
-        {/* Collaboration Closing Note */}
-        <div className="mt-12 glow-box p-6 rounded-lg border border-orange-500/30 bg-gradient-to-r from-orange-500/5 to-pink-500/5 text-center">
-          <p className="text-slate-300 leading-relaxed">
-            I'm actively looking for{" "}
-            <span className="text-orange-400 font-semibold">internships and collaboration opportunities</span> to apply
-            my AI/ML skills in real-world projects. Whether you're interested in discussing ideas, potential
-            partnerships, or opportunities, I'd love to connect!
-          </p>
+        <div className="relative border-2 border-green-500/60 bg-slate-950/40 backdrop-blur-md rounded-lg p-8 text-center mt-12 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent pointer-events-none"></div>
+          <div className="relative z-10">
+            <div className="text-sm font-mono text-cyan-400 mb-4">$ cat opportunities.txt</div>
+            <p className="text-slate-300 leading-relaxed text-lg font-mono">
+              <span className="text-green-400 font-black">SEEKING: </span>
+              <span className="text-cyan-400">Internships &amp; Collaborations</span>
+            </p>
+            <p className="text-slate-400 mt-4 font-mono text-sm">
+              I'm actively looking for opportunities to apply my AI/ML expertise in real-world projects. Let's build
+              something amazing together!
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -30,7 +30,11 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 hover:scale-110 glow-button"
+      className="fixed bottom-8 right-8 z-40 p-3 rounded-full text-white hover:scale-110 transition-all duration-300 font-bold text-xl"
+      style={{
+        background: "linear-gradient(to right, #00ff88, #00d9ff)",
+        boxShadow: "0 0 20px rgba(0, 255, 136, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1)",
+      }}
       aria-label="Back to top"
     >
       ↑
