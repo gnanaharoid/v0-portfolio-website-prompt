@@ -12,16 +12,40 @@ export default function Contact() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
-    setFormData({ name: "", email: "", message: "" })
+    setLoading(true)
+    setError("")
+
+    try {
+      const response = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to send message")
+      }
+
+      setSubmitted(true)
+      setFormData({ name: "", email: "", message: "" })
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch (err) {
+      setError("Failed to send message. Please try again.")
+      console.error(err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -109,13 +133,25 @@ export default function Contact() {
             </div>
 
             <button type="submit" className="w-full glow-button justify-center">
-              {submitted ? "✓ Message Sent!" : "Send Message"}
+              {loading ? "Sending..." : submitted ? "✓ Message Sent!" : "Send Message"}
             </button>
+
+            {error && <p className="text-center text-red-400 text-sm mt-2">{error}</p>}
 
             {submitted && (
               <p className="text-center text-cyan-400 text-sm">Thanks for reaching out! I'll get back to you soon.</p>
             )}
           </form>
+        </div>
+
+        {/* Collaboration Closing Note */}
+        <div className="mt-12 glow-box p-6 rounded-lg border border-orange-500/30 bg-gradient-to-r from-orange-500/5 to-pink-500/5 text-center">
+          <p className="text-slate-300 leading-relaxed">
+            I'm actively looking for{" "}
+            <span className="text-orange-400 font-semibold">internships and collaboration opportunities</span> to apply
+            my AI/ML skills in real-world projects. Whether you're interested in discussing ideas, potential
+            partnerships, or opportunities, I'd love to connect!
+          </p>
         </div>
       </div>
     </section>

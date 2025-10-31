@@ -1,7 +1,13 @@
+import FloatingIcons from "./floating-icons"
+import Timeline from "./timeline"
+import ResumeDownload from "./resume-download"
+
 export default function About() {
   return (
     <section className="relative py-20 px-4 md:px-8 max-w-6xl mx-auto bg-gradient-to-b from-slate-900 to-slate-950">
-      <div className="space-y-12">
+      <FloatingIcons />
+
+      <div className="space-y-12 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
@@ -50,6 +56,15 @@ export default function About() {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-cyan-500/20">
+          <h3 className="text-4xl font-bold text-cyan-400 mb-8">Education Journey</h3>
+          <Timeline />
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <ResumeDownload />
         </div>
       </div>
     </section>

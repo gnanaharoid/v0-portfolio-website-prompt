@@ -1,3 +1,5 @@
+import WaveformVisualizer from "./waveform-visualizer"
+
 export default function Projects() {
   const projects = [
     {
@@ -8,6 +10,7 @@ export default function Projects() {
         "An intelligent system for detecting and analyzing noise pollution in different environments using sensor data and machine learning algorithms.",
       tags: ["Python", "ML", "Data Analysis", "IoT"],
       icon: "📊",
+      hasVisualization: true,
     },
     {
       id: 2,
@@ -47,8 +50,14 @@ export default function Projects() {
               key={project.id}
               className={`group glow-box p-6 rounded-lg transition-all duration-300 ${
                 !project.disabled && "hover:scale-105 hover:glow-pulse cursor-pointer"
-              } ${project.disabled ? "opacity-60" : ""}`}
+              } ${project.disabled ? "opacity-60" : ""} ${project.hasVisualization ? "md:col-span-2" : ""}`}
             >
+              {project.hasVisualization && (
+                <div className="mb-4 h-40 rounded-lg overflow-hidden border border-cyan-500/30 transform group-hover:rotateX-5 transition-transform duration-300">
+                  <WaveformVisualizer />
+                </div>
+              )}
+
               <div className="text-4xl mb-4">{project.icon}</div>
               <h3 className="text-2xl font-bold text-cyan-400 mb-2">{project.title}</h3>
               <p className="text-sm text-purple-400 mb-3 font-semibold">{project.category}</p>

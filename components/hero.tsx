@@ -4,6 +4,13 @@ export default function Hero() {
   return (
     <div className="relative w-full h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="relative z-10 text-center max-w-3xl px-4">
+        <div className="mb-8 inline-block relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-75 animate-pulse"></div>
+          <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-cyan-500/50 flex items-center justify-center text-5xl overflow-hidden">
+            <span className="animate-pulse">👨‍💻</span>
+          </div>
+        </div>
+
         <div className="mb-8 inline-block">
           <div className="text-sm font-semibold text-cyan-400 tracking-widest mb-2">WELCOME TO MY PORTFOLIO</div>
           <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto"></div>

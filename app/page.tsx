@@ -8,6 +8,7 @@ import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Contact from "@/components/contact"
 import BackToTop from "@/components/back-to-top"
+import CursorTrail from "@/components/cursor-trail"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home")
@@ -35,6 +36,8 @@ export default function Home() {
 
   return (
     <main className="relative w-full">
+      <CursorTrail />
+
       <Navigation activeSection={activeSection} />
 
       <section id="home" className="min-h-screen">
