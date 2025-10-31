@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/harishgnana2021-7591s-projects/v0-portfolio-website-prompt](https://vercel.com/harishgnana2021-7591s-projects/v0-portfolio-website-prompt)**
+**[https://v0-portfolio-website-prompt-lake.vercel.app/](https://v0-portfolio-website-prompt-lake.vercel.app/)**
 
 ## Build your app
 
